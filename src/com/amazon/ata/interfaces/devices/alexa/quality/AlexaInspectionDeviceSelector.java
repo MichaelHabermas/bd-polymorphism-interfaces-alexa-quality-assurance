@@ -9,6 +9,7 @@ import com.amazon.ata.interfaces.increment.SequentialIncrementer;
 public class AlexaInspectionDeviceSelector {
 
     private final SequentialIncrementer incrementer;
+    private int n;
 
     /**
      * Instantiates a new Alexa inspection device selector with the given incrementer.
@@ -25,8 +26,10 @@ public class AlexaInspectionDeviceSelector {
      *
      * @return the position of the device to be selected and checked for quality.
      */
+    public int getSampleDevicePosition(int n) {
+        return incrementer.increment(n);
+    }
     public int getSampleDevicePosition() {
-        incrementer.increment();
-        return incrementer.getValue();
+        return incrementer.increment();
     }
 }

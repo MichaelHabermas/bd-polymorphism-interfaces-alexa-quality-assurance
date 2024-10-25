@@ -31,6 +31,14 @@ public class SequentialIncrementer {
      * Increments the integer value by one.
      * @return The new integer value after incrementing.
      */
+    public int increment(int val) {
+        if (val < 1) {
+            val = 1;
+        }
+        this.value += val;
+        return getValue();
+    }
+
     public int increment() {
         this.value += 1;
         return getValue();
